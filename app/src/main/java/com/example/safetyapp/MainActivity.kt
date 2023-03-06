@@ -11,24 +11,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomBar = findViewById<BottomNavigationView>(R.id.bottom_bar)
-
+//        replaceFragment(HomeFragment())
         bottomBar.setOnItemSelectedListener {
 
-            if (it.itemId == R.id.nav_guard) {
-                inflateFragment(GuardFragment.newInstance())
-            } else if (it.itemId == R.id.nav_home){
-                inflateFragment(HomeFragment.newInstance())
-            }else if (it.itemId == R.id.nav_profile){
-                inflateFragment(ProfileFragment.newInstance())
-            }else if (it.itemId == R.id.nav_dashboard){
-                inflateFragment(DashboardFragment.newInstance())
+            when (it.itemId) {
+                R.id.nav_home -> {
+                    inflateFragment(HomeFragment.newInstance())
+                }
+                R.id.nav_guard -> {
+                    inflateFragment(GuardFragment.newInstance())
+
+                }
+                R.id.nav_profile -> {
+                    inflateFragment(ProfileFragment.newInstance())
+                }
+                R.id.nav_dashboard -> {
+                    inflateFragment(DashboardFragment.newInstance())
+                }
             }
-
-
 
             true
         }
+        bottomBar.selectedItemId = R.id.nav_home
     }
+
+//    private fun replaceFragment(homeFragment:Fragment) {
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction =  fragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.container,homeFragment)
+//        fragmentTransaction.commit()
+//    }
 
     private fun inflateFragment(newInstance: Fragment) {
 
@@ -36,4 +48,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.container,newInstance)
         transaction.commit()
     }
+
 }
