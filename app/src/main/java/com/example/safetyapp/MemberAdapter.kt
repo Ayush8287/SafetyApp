@@ -21,16 +21,22 @@ class MemberAdapter(private val listMember: List<MemberModel>) : RecyclerView.Ad
 
         val item = listMember[position]
         holder.userName.text=item.name
+        holder.battery.text = item.battery
+        holder.distance.text = item.distance
+        holder.address.text = item.address
     }
 
     override fun getItemCount(): Int {
         return listMember.size
     }
 
-    class ViewHolder(val item: View): RecyclerView.ViewHolder(item) {
+    class ViewHolder(item: View): RecyclerView.ViewHolder(item) {
 
         val imageUser = item.findViewById<ImageView>(R.id.img_user)
-        val userName = item.findViewById<TextView>(R.id.user_name)
+        val userName = item.findViewById<TextView>(R.id.name)
+        val battery = item.findViewById<TextView>(R.id.battery_percent)
+        val distance = item.findViewById<TextView>(R.id.distance_value)
+        val address = item.findViewById<TextView>(R.id.address)
 
     }
 

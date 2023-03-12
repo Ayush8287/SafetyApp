@@ -1,199 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_16"
+    android:layout_marginTop="12dp"
+    android:layout_marginEnd="@dimen/dimen_16"
+    android:layout_marginBottom="12dp"
+    android:background="@color/gray_bg"
+    app:cardCornerRadius="@dimen/dimen_16"
+    app:cardElevation="@dimen/dimen_8"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="16dp"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/img_user"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/card_1"
-        app:layout_constraintStart_toStartOf="@+id/card_1"
-        app:layout_constraintTop_toTopOf="@+id/card_1" />
-
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:elevation="16dp"
-        android:text="Lokesh Kedia"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_user"
-        app:layout_constraintTop_toTopOf="@+id/card_1" />
+        android:padding="@dimen/dimen_16">
 
-    <ImageView
-        android:id="@+id/location_pin"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_margin="16dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_location_pin"
-        app:layout_constraintStart_toEndOf="@+id/img_user"
-        app:layout_constraintTop_toBottomOf="@+id/user_name"
-        app:tint="@color/green_guard" />
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_user_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:elevation="16dp"
-        android:text="1111/10, Model Town, Delhi"
-        app:layout_constraintEnd_toStartOf="@+id/time"
-        app:layout_constraintStart_toEndOf="@+id/location_pin"
-        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:text="Lokesh Kedia"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_16_sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img_user"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/battery_card"
-        android:layout_width="36dp"
-        android:layout_height="16dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/light_green"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="16dp"
-        app:layout_constraintStart_toStartOf="@+id/card_1"
-        app:layout_constraintTop_toBottomOf="@+id/img_user">
+        <ImageView
+            android:id="@+id/img_location"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_location_pin"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:tint="@color/green" />
 
-    </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="9th buildind, 2nd floor, maldiv road, manali 9th buildind, 2nd floor 9th buildind, 2nd floor,"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_location"
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
-    <ImageView
-        android:id="@+id/ic_battery"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_margin="2dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_battery"
-        app:layout_constraintBottom_toBottomOf="@+id/battery_card"
-        app:layout_constraintStart_toStartOf="@+id/battery_card"
-        app:layout_constraintTop_toTopOf="@+id/battery_card"
-        app:tint="@color/green_guard" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="16dp"
-        android:text="80%"
-        android:textColor="@color/green_guard"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/battery_card"
-        app:layout_constraintEnd_toEndOf="@+id/battery_card"
-        app:layout_constraintTop_toTopOf="@+id/battery_card" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:elevation="16sp"
-        android:text="16:40"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/card_1"
-        app:layout_constraintTop_toTopOf="@+id/card_1" />
-
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_margin="24dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_call"
-        app:layout_constraintBottom_toBottomOf="@+id/card_1"
-        app:layout_constraintEnd_toEndOf="@+id/card_1" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="16:40"
+            android:textColor="@android:color/darker_gray"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/name" />
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/distance_card"
-        android:layout_width="36dp"
-        android:layout_height="16dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="48dp"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="16dp"
-        app:layout_constraintStart_toEndOf="@+id/battery_card"
-        app:layout_constraintBottom_toBottomOf="@+id/card_1">
+        <LinearLayout
+            android:id="@+id/lin_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:background="@drawable/shape_rounded_rect"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/lin_distance"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@id/img_user"
+            app:layout_constraintTop_toBottomOf="@id/img_user">
 
-    </com.google.android.material.card.MaterialCardView>
+            <ImageView
+                android:id="@+id/img_battery"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_battery"
+                app:tint="@color/green" />
 
-    <ImageView
-        android:id="@+id/distance_icon"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_margin="2dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_send"
-        app:layout_constraintBottom_toBottomOf="@+id/distance_card"
-        app:layout_constraintStart_toStartOf="@+id/distance_card"
-        app:layout_constraintTop_toTopOf="@+id/distance_card"
-        app:tint="@color/purple_200" />
+            <TextView
+                android:id="@+id/battery_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="center_vertical"
+                android:text="90%"
+                android:textColor="@color/green"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/distance_mile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="16dp"
-        android:layout_marginLeft="4dp"
-        android:text="200M"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/distance_card"
-        app:layout_constraintStart_toEndOf="@+id/distance_icon"
-        app:layout_constraintTop_toTopOf="@+id/distance_card" />
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/network_card"
-        android:layout_width="36dp"
-        android:layout_height="16dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="56dp"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="16dp"
-        app:layout_constraintStart_toEndOf="@+id/distance_card"
-        app:layout_constraintBottom_toBottomOf="@+id/card_1">
+        </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:id="@+id/lin_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/lin_wifi"
+            app:layout_constraintStart_toEndOf="@id/lin_battery"
+            app:layout_constraintTop_toBottomOf="@id/img_user">
 
-    <ImageView
-        android:id="@+id/network_icon"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_margin="2dp"
-        android:elevation="16dp"
-        android:src="@drawable/ic_wi_fi"
-        app:layout_constraintBottom_toBottomOf="@+id/network_card"
-        app:layout_constraintStart_toStartOf="@+id/network_card"
-        app:layout_constraintTop_toTopOf="@+id/network_card"
-        app:tint="@color/green_guard" />
+            <ImageView
+                android:id="@+id/img_distance"
+                android:layout_width="16dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_send"
+                app:layout_constraintStart_toEndOf="@id/battery_percent"
+                app:layout_constraintTop_toBottomOf="@id/img_user"
+                app:tint="#b197dc" />
 
-    <TextView
-        android:id="@+id/network"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="16dp"
-        android:layout_marginLeft="4dp"
-        android:text="WiFi"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/network_card"
-        app:layout_constraintStart_toEndOf="@+id/network_icon"
-        app:layout_constraintTop_toTopOf="@+id/network_card" />
+            <TextView
+                android:id="@+id/distance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="center_vertical"
+                android:text="223M"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/img_battery"
+                app:layout_constraintStart_toEndOf="@id/img_distance"
+                app:layout_constraintTop_toTopOf="@id/img_battery" />
+
+        </LinearLayout>
 
 
+        <LinearLayout
+            android:id="@+id/lin_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@id/img_call"
+            app:layout_constraintStart_toEndOf="@id/lin_distance"
+            app:layout_constraintTop_toBottomOf="@id/img_user">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/img_wifi"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_wi_fi"
+                app:layout_constraintStart_toEndOf="@id/distance_value"
+                app:layout_constraintTop_toBottomOf="@id/img_user"
+                app:tint="@color/green" />
+
+            <TextView
+                android:id="@+id/wifi_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="WiFi"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/img_battery"
+                app:layout_constraintStart_toEndOf="@id/img_wifi"
+                app:layout_constraintTop_toTopOf="@id/img_battery" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/img_call"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_call"
+            app:layout_constraintBottom_toBottomOf="@id/lin_battery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lin_battery" />
+<!--            android:background="@drawable/shape_circle"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
